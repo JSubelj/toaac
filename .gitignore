@@ -1,0 +1,6 @@
+venv/
+ffmpeg*
+.idea
+log*
+config*
+*__pycache__*

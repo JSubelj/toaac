@@ -1,0 +1,5 @@
+ffmpeg-progress==0.0.4
+pathtools==0.1.2
+psutil==5.7.0
+pymediainfo==4.2.1
+watchdog==0.10.3
