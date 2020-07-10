@@ -121,11 +121,14 @@ class _Handler(FileSystemEventHandler):
     def on_any_event(event):
 
 
+        keys_to_delete = []
         for key, watcher in _Handler.watchers.items():
             if not watcher.is_alive():
                 print("Removed watcher for ",os.path.basename(key))
                 watcher.join()
-                del _Handler.watchers[key]
+                keys_to_delete.append(key)
+        for key in keys_to_delete:
+            del _Handler.watchers[key]
 
         if event.is_directory:
             return None
